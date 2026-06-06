@@ -1,0 +1,1 @@
+This is for css and images. (static files)
