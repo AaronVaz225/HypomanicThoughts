@@ -12,3 +12,14 @@ export const createPost = async (req, res) => {
         res.status(500).json({message: "An error occured creating a new post"});
     }
 };
+
+
+//Function to get all posts
+export const getAllPosts = async (req, res) => {
+    try {
+        const allPosts = await Post.find({});
+        res.status(200).json(allPosts);
+    } catch (err) {
+        res.status(500).json({message: "An error occured getting posts."});
+    }
+};
