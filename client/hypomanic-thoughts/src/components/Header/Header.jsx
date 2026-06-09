@@ -1,14 +1,14 @@
 //Contains Title and NavBar
 import { NavLink } from "react-router-dom"
-import "./header.css"
+import styles from "./header.module.css"
 
 
 
 const Header = () => {
   return (
-    <header className="header-container">
+    <header className={styles.headerContainer}>
         {/*------------Nav Bar-------------*/}
-        <nav className="nav-bar">
+        <nav className={styles.navBar}>
         <NavLink to="/" end>
             Home
           </NavLink>
@@ -24,9 +24,9 @@ const Header = () => {
 
 
         {/*------------Title-------------*/}
-        <div className="title">
+        <div className={styles.title}>
           Hypo 
-          <div className="manic">MANIC </div> 
+          <div className={styles.manic}>MANIC </div> 
           Thoughts
         </div>
     </header>

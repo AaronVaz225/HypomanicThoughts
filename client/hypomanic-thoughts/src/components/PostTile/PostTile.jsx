@@ -12,9 +12,12 @@ It should also be clickable, taking you to the page that lets you read that post
 -fetch the actual post data from the db
 
 */
+import styles from "../PostTile/postTile.module.css"
+
+
 const PostTile = () => {
   return (
-    <div className="post-tile">
+    <div className={styles.postTileContainer}>
         <img src="/BaSingSe.jpg" style={{ width: "400px", heigth: "400px" }}/>
     </div>
   )
