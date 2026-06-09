@@ -1,10 +1,10 @@
 import { Routes, Route } from "react-router-dom";
-import Admin from './pages/Admin.jsx';
-import CreatePost from './pages/CreatePost.jsx';
-import Home from './pages/Home.jsx';
-import PostDetails from "./pages/PostDetails.jsx";
-import Contact from "./pages/Contact.jsx";
-import About from './pages/About.jsx';
+import Admin from './pages/Admin/Admin.jsx';
+import CreatePost from './pages/CreatePost/CreatePost.jsx';
+import Home from './pages/Home/Home.jsx';
+import PostDetails from "./pages/PostDetails/PostDetails.jsx";
+import Contact from "./pages/Contact/Contact.jsx";
+import About from './pages/About/About.jsx';
 
 
 
