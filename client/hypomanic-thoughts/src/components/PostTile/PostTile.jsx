@@ -7,18 +7,19 @@ It should also be clickable, taking you to the page that lets you read that post
 
 /*
 #TODO
--create simple post tile just with html and css
--create a simulated data file to get the logic of maping out the post content correct
--fetch the actual post data from the db
+-create simple post tile just with html and css ✅
+-create a simulated data file to get the logic of maping out the post content correct 
+-fetch the actual post data from the db 
+-Upload images with "Cloudinary".
 
 */
 import styles from "../PostTile/postTile.module.css"
 
 
-const PostTile = () => {
+const PostTile = ({ title }) => {
   return (
-    <div className={styles.postTileContainer}>
-        <img src="/BaSingSe.jpg" style={{ width: "400px", heigth: "400px" }}/>
+    <div className={styles.post}>
+        <div className={styles.title}>{title}</div>
     </div>
   )
 }
