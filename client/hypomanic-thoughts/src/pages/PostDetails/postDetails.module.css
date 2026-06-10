@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300..700&display=swap');
+
+
+
+
+.blogTitle {
+    /* background-color: burlywood; */
+    display: flex;
+    justify-content: center;
+    font-family: "Overpass Mono", monospace;
+    font-size: xx-large;
+    border-bottom-style: solid;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+
+.blogBody {
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    font-family: "Overpass Mono", monospace;
+    font-size: large;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-top: 10vw;
+    min-height: 60vh;
+    margin-bottom: 10vh;
+}

@@ -6,6 +6,7 @@ import api from "../../api/axios.js"
 
 
 
+
 const Home = () => {
 
 
@@ -45,6 +46,8 @@ const Home = () => {
 
           
         </div>
+
+ 
     </>
     
   )};

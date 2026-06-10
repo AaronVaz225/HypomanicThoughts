@@ -16,7 +16,7 @@ const PostTile = ({ title, postId }) => {
 
     <NavLink to={`/post/${postId}`} className={styles.link}>
     <div className={styles.post}>
-        <div className={styles.title}>{title}{postId}</div>
+        <div className={styles.title}>{title}</div>
     </div>
     </NavLink>
      

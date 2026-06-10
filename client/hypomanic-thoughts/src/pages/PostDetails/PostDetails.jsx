@@ -7,6 +7,8 @@ import { useState, useEffect } from "react"
 import Header from "../../components/Header/Header"
 import { useParams } from "react-router"
 import api from "../../api/axios"
+import styles from "../PostDetails/postDetails.module.css"
+import Footer from "../../components/Footer/Footer"
 
 const PostDetails = () => {
 
@@ -21,7 +23,7 @@ const PostDetails = () => {
     const getPostBodyFromApi = async () => {
       const singlePost = await api.get(`/api/posts/${postId}`)
 
-      setPostBody(singlePost.data.body)
+      setPostBody(singlePost.data)
 
     }
 
@@ -35,7 +37,11 @@ const PostDetails = () => {
   return (
     <>
     <Header />
-    <div>PostDetails {postBody}</div>
+    <div className={styles.container}>
+      <div className={styles.blogTitle}>{postBody.title}</div>
+      <div className={styles.blogBody}>{postBody.body}</div>
+    </div>
+    <Footer />
     </>
   )
 }
