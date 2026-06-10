@@ -1,10 +1,11 @@
+import CreatePostForm from "../../components/CreatePostForm/CreatePostForm"
 import Header from "../../components/Header/Header"
 
 const CreatePost = () => {
   return (
     <>
     <Header />
-    <div>CreatePost</div>
+    <CreatePostForm />
     </>
   )
 }
