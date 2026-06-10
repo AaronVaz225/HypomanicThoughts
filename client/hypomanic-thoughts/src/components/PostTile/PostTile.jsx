@@ -4,16 +4,22 @@ It should show the picture and title.
 It should also be clickable, taking you to the page that lets you read that post. 
 */
 
+import { NavLink } from "react-router"
+
 
 
 import styles from "../PostTile/postTile.module.css"
 
 
-const PostTile = ({ title }) => {
+const PostTile = ({ title, postId }) => {
   return (
+
+    <NavLink to="/post" className={styles.link}>
     <div className={styles.post}>
-        <div className={styles.title}>{title}</div>
+        <div className={styles.title}>{title}{postId}</div>
     </div>
+    </NavLink>
+     
   )
 }
 

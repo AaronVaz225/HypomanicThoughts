@@ -11,16 +11,14 @@ const Home = () => {
 
   const [ post, setPost ] = useState([]);
 
-  
-
   useEffect(() => {
 
     const getPostsFromApi = async () => {
 
       const allPosts = await api.get("/api/posts");
       setPost(allPosts.data);
+      
     };
-
 
 
     getPostsFromApi();
@@ -28,9 +26,7 @@ const Home = () => {
   },[]);
 
   
-  console.log(post)
-
-
+  
 
   return (
     <>
@@ -42,7 +38,8 @@ const Home = () => {
           {/* Renders each post's title card */}
           {
             post.map(post => {
-              return <div className={styles.tileArea}><PostTile key={post.id} title={post.title} /></div>
+              //console.log(post._id)
+              return <div key={post._id} className={styles.tileArea}><PostTile title={post.title} postId={post._id} /></div>
             })
           }
 

@@ -9,15 +9,15 @@ const Header = () => {
     <header className={styles.headerContainer}>
         {/*------------Nav Bar-------------*/}
         <nav className={styles.navBar}>
-        <NavLink to="/" end>
+        <NavLink to="/" style={( {isActive} ) => isActive ? {textDecoration : "underline"} : {textDecoration : "none" }} end>
             Home
           </NavLink>
 
-          <NavLink to="/about" >
+          <NavLink to="/about" style={( {isActive} ) => isActive ? {textDecoration : "underline"} : {textDecoration : "none" }}>
             About
           </NavLink>
 
-          <NavLink to="/Contact" >
+          <NavLink to="/Contact" style={( {isActive} ) => isActive ? {textDecoration : "underline"} : {textDecoration : "none" }}>
             Contact
           </NavLink>
         </nav>
