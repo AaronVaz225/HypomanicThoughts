@@ -2,8 +2,17 @@ import styles from "../CreatePostForm/createPostForm.module.css"
 import api from "../../api/axios"
 
 
+//Mantine Code-----------------------------------------------
+import { MantineProvider } from '@mantine/core';            
+// Mantine Styles
+import '@mantine/core/styles.css';
+import '@mantine/tiptap/styles.css';
+import TextEditor from "../TextEditor/TextEditor";
+//-----------------------------------------------------------------------------------------
 
-//formData.get("fieldName") matches name on form
+
+
+
 const CreatePostForm = () => {
 
 
@@ -44,8 +53,9 @@ const CreatePostForm = () => {
 
   return (
 
-    <div>
+    <>
 
+    <div>
     <form action={handleSubmit}>
         <label htmlFor="title">Title</label>
         <input id="title" type="text" name="title"/>
@@ -55,8 +65,15 @@ const CreatePostForm = () => {
 
         <input type="submit" value="Post" />
     </form>
-    
+
+    <MantineProvider >
+        <TextEditor />
+    </MantineProvider>
     </div>
+
+    
+
+    </>
   )
 }
 
