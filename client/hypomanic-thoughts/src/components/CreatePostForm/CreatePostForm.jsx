@@ -3,6 +3,7 @@ import api from "../../api/axios"
 import Footer from "../Footer/Footer"
 import { useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
+import DropZoneButton from "../DropZone/DropZoneButton"
 
 //Mantine Code-----------------------------------------------
 import { MantineProvider } from '@mantine/core';
@@ -60,6 +61,8 @@ const CreatePostForm = () => {
     <>
 
     <div>
+        <DropZoneButton />
+
         <form action={handleSubmit}>
             <div className={styles.titleContainer}>
                 <label htmlFor="title" className={styles.title}>Title</label>
