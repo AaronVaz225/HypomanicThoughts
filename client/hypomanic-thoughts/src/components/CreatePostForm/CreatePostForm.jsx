@@ -1,10 +1,11 @@
 import styles from "../CreatePostForm/createPostForm.module.css"
 import api from "../../api/axios"
+import Footer from "../Footer/Footer"
 
 
 //Mantine Code-----------------------------------------------
 import { MantineProvider } from '@mantine/core';            
-// Mantine Styles
+// Mantine Styles (has to be in this order)
 import '@mantine/core/styles.css';
 import '@mantine/tiptap/styles.css';
 import TextEditor from "../TextEditor/TextEditor";
@@ -49,29 +50,37 @@ const CreatePostForm = () => {
 
 
 
-
-
   return (
 
     <>
 
     <div>
-    <form action={handleSubmit}>
-        <label htmlFor="title">Title</label>
-        <input id="title" type="text" name="title"/>
+        <form action={handleSubmit}>
+            <div className={styles.titleContainer}>
+                <label htmlFor="title" className={styles.title}>Title</label>
+            </div>
+            <div className={styles.titleTextAreaContainer}>
+                <input id="title" type="text" name="title" className={styles.titleTextArea}/>
+            </div>
 
-        <label htmlFor="body">Body</label>
-        <input id="body" type="text" name="body"/>
+            <label htmlFor="body">Body</label>
+            <input id="body" type="text" name="body"/>
 
-        <input type="submit" value="Post" />
-    </form>
+        
+        
 
-    <MantineProvider >
-        <TextEditor />
-    </MantineProvider>
+            <MantineProvider >
+                <div className={styles.textEditor}>
+                    <TextEditor />
+                </div>
+            </MantineProvider>
+
+        <input type="submit" value="Post" className={styles.submitButton}/>
+        </form>
+    
     </div>
 
-    
+    <Footer />
 
     </>
   )

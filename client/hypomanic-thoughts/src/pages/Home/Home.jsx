@@ -3,6 +3,7 @@ import PostTile from "../../components/PostTile/PostTile.jsx";
 import styles from "../Home/home.module.css";
 import {useState, useEffect } from "react";
 import api from "../../api/axios.js"
+import Footer from "../../components/Footer/Footer.jsx";
 
 
 
@@ -46,6 +47,8 @@ const Home = () => {
 
           
         </div>
+
+        <Footer />
 
  
     </>

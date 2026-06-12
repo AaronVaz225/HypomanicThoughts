@@ -1,0 +1,9 @@
+.tiptapEditorContainer {
+    margin-bottom: 5vh;
+}
+
+.tiptap {
+    min-height: 60vh;
+    background-color: rgb(245, 245, 245);
+    
+}

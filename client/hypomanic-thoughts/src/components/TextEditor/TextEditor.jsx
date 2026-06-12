@@ -3,6 +3,7 @@
 import { RichTextEditor } from '@mantine/tiptap';
 import { useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
+import "../TextEditor/textEditor.css"
 
 export default function TextEditor() {
   const editor = useEditor({
@@ -10,8 +11,17 @@ export default function TextEditor() {
     content: '<p>Start typing your thoughts here...</p>',
   });
 
+
+//for testing
+const handleClick = () => {
+  console.log(editor.getJSON()) 
+}
+
+
+
+
   return (
-    <RichTextEditor editor={editor}>
+    <RichTextEditor editor={editor} className="tiptapEditorContainer">
       {/* This builds the toolbar automatically */}
       <RichTextEditor.Toolbar>
         <RichTextEditor.ControlsGroup>
@@ -33,6 +43,10 @@ export default function TextEditor() {
 
       {/* This is the actual typing area */}
       <RichTextEditor.Content />
+      <button type="button" onClick={handleClick}>Test</button> {/*For testing*/}
     </RichTextEditor>
+
+
+    
   );
 }
