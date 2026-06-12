@@ -3,13 +3,12 @@ import api from "../../api/axios"
 import Footer from "../Footer/Footer"
 import { useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
-import DropZoneButton from "../DropZone/DropZoneButton"
+import DropzoneButton from "../DropZone/DropZoneButton"
 
 //Mantine Code-----------------------------------------------
-import { MantineProvider } from '@mantine/core';
 // Mantine Styles (has to be in this order)
-import '@mantine/core/styles.css';
-import '@mantine/tiptap/styles.css';
+//import '@mantine/core/styles.css';
+//import '@mantine/tiptap/styles.css';
 import TextEditor from "../TextEditor/TextEditor";
 //-----------------------------------------------------------------------------------------
 
@@ -59,9 +58,11 @@ const CreatePostForm = () => {
   return (
 
     <>
+    <div className={styles.dropzoneContainer}>
+     <DropzoneButton />
+    </div>
 
     <div>
-        <DropZoneButton />
 
         <form action={handleSubmit}>
             <div className={styles.titleContainer}>
@@ -72,11 +73,11 @@ const CreatePostForm = () => {
             </div>
 
 
-            <MantineProvider >
+            
                 <div className={styles.textEditor}>
                     <TextEditor editor={editor} />
                 </div>
-            </MantineProvider>
+            
 
         <input type="submit" value="Post" className={styles.submitButton}/>
         </form>

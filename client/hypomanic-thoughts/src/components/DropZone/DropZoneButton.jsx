@@ -4,7 +4,9 @@ import { Button, Group, Text, useMantineTheme } from '@mantine/core';
 import { Dropzone, MIME_TYPES } from '@mantine/dropzone';
 import classes from './DropzoneButton.module.css';
 
-export function DropzoneButton() {
+
+
+const DropzoneButton = () => {
   const theme = useMantineTheme();
   const openRef = useRef(null);
 
@@ -15,8 +17,8 @@ export function DropzoneButton() {
         onDrop={() => {}}
         className={classes.dropzone}
         radius="md"
-        accept={[MIME_TYPES.pdf]}
-        maxSize={30 * 1024 ** 2}
+        accept={[MIME_TYPES.png, MIME_TYPES.jpeg, MIME_TYPES.heic, MIME_TYPES.webp]}
+        maxSize={5 * 1024 ** 2} //5MB
         aria-label="Drop files here"
       >
         <div style={{ pointerEvents: 'none' }}>
@@ -34,13 +36,13 @@ export function DropzoneButton() {
 
           <Text ta="center" fw={700} fz="lg" mt="xl">
             <Dropzone.Accept>Drop files here</Dropzone.Accept>
-            <Dropzone.Reject>Pdf file less than 30mb</Dropzone.Reject>
-            <Dropzone.Idle>Upload resume</Dropzone.Idle>
+            <Dropzone.Reject>file less than 5mb</Dropzone.Reject>
+            <Dropzone.Idle>Upload picture</Dropzone.Idle>
           </Text>
 
           <Text className={classes.description}>
-            Drag&apos;n&apos;drop files here to upload. We can accept only <i>.pdf</i> files that
-            are less than 30mb in size.
+            Drop files here to upload. Supports <i>.png, .jpeg, .heic, .webp</i> files that
+            are less than 5mb in size.
           </Text>
         </div>
       </Dropzone>
@@ -51,3 +53,5 @@ export function DropzoneButton() {
     </div>
   );
 }
+
+export default DropzoneButton;
