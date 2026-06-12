@@ -14,13 +14,15 @@
     margin-right: 10vw;
 }
 
+/*global is needed since .tiptap is a classname that is not being used as a css module*/
+.container :global(.tiptap) {
+    background-color: rgb(255, 255, 255);
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
 
 
-
-
-
-
-.blogBody {
+/* .blogBody {
     background-color: aqua; 
     display: flex;
     justify-content: center;
@@ -31,5 +33,5 @@
     padding-top: 10vw;
     min-height: 60vh;
     margin-bottom: 10vh;
-}
+} */
 
