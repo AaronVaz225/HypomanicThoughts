@@ -1,7 +1,8 @@
 import styles from "../CreatePostForm/createPostForm.module.css"
 import api from "../../api/axios"
 import Footer from "../Footer/Footer"
-
+import { useEditor } from '@tiptap/react';
+import StarterKit from '@tiptap/starter-kit';
 
 //Mantine Code-----------------------------------------------
 import { MantineProvider } from '@mantine/core';            
@@ -15,13 +16,19 @@ import TextEditor from "../TextEditor/TextEditor";
 
 
 const CreatePostForm = () => {
+    const editor = useEditor({
+        extensions: [StarterKit],
+        content: '<p>Start typing your thoughts here...</p>',
+      });
 
 
     const handleSubmit = async (formData) => {
         
 
         const postTitle = formData.get("title")
-        const postBody = formData.get("body")
+        const postBody = JSON.stringify(editor.getJSON());
+
+        console.log(postBody)
 
         try {
             const postPayload = {
@@ -49,6 +56,11 @@ const CreatePostForm = () => {
 
 
 
+    
+
+
+
+
 
   return (
 
@@ -63,15 +75,10 @@ const CreatePostForm = () => {
                 <input id="title" type="text" name="title" className={styles.titleTextArea}/>
             </div>
 
-            <label htmlFor="body">Body</label>
-            <input id="body" type="text" name="body"/>
-
-        
-        
 
             <MantineProvider >
                 <div className={styles.textEditor}>
-                    <TextEditor />
+                    <TextEditor editor={editor} />
                 </div>
             </MantineProvider>
 
