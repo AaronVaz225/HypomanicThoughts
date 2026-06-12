@@ -5,7 +5,7 @@ import { useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 
 //Mantine Code-----------------------------------------------
-import { MantineProvider } from '@mantine/core';            
+import { MantineProvider } from '@mantine/core';
 // Mantine Styles (has to be in this order)
 import '@mantine/core/styles.css';
 import '@mantine/tiptap/styles.css';
@@ -53,13 +53,6 @@ const CreatePostForm = () => {
             console.error(`Error submitting post: ${err.message}`)
         }
     };
-
-
-
-    
-
-
-
 
 
   return (

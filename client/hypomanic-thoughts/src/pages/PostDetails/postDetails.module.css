@@ -15,8 +15,13 @@
 }
 
 
+
+
+
+
+
 .blogBody {
-    /* background-color: aqua; */
+    background-color: aqua; 
     display: flex;
     justify-content: center;
     font-family: "Overpass Mono", monospace;
@@ -27,3 +32,4 @@
     min-height: 60vh;
     margin-bottom: 10vh;
 }
+
