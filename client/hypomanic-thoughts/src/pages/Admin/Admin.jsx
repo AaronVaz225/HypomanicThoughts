@@ -28,7 +28,18 @@ const Admin = () => {
 
 
 
+  const handleClick = async (postId) => {
+    
+    try {
+      await api.delete(`/api/posts/${postId}`)
+      setPost(post.filter(post => post._id != postId))
+      alert("Post Deleted")
+    } catch (err) {
+      console.error(`Error deleting post: ${err}`)
+    }
 
+    
+  }
 
 
 
@@ -49,7 +60,10 @@ const Admin = () => {
     {
       post.map(post => {
         //console.log(post._id)
-        return <div key={post._id} className={styles.tileArea}><PostTile title={post.title} postId={post._id} /><button>Delete</button></div>
+        return (
+          <div key={post._id} className={styles.tileArea}>
+            <PostTile title={post.title} postId={post._id} />
+          <button onClick={() => handleClick(post._id)} >Delete</button></div>)
       })
     }
 

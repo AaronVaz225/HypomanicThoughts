@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <>
     <div className={styles.footer}>Dis Gunna Be Da Footer</div>
-    <NavLink to="/admin/create-post" >Create Post </NavLink>
+    <NavLink to="/admin/" >Admin</NavLink>
     </>
   )
 }
