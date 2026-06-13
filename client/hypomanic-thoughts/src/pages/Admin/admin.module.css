@@ -9,6 +9,7 @@
 }
 
 
+
 .tileArea {
     /* background-color: aqua; */
     width: 100%;
@@ -16,8 +17,22 @@
     display: flex;
     justify-content: center;
     align-content: center;
-    flex-direction: column;
+    background-size: cover;      
+    background-position: center;
+    box-shadow: 10px 5px 5px rgb(85, 84, 84);
+    border-radius: 2%;
     
+}
+
+.tileArea:hover {
+    /*transform: scale(1.01);*/
+    animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1.02); }
+    50% { transform: scale(1); }
+    100% { transform: scale(1.02); }
 }
 
 
@@ -48,7 +63,7 @@
 
 button {
     margin-top: 1vh;
-    display: flex;
+    display: block;
     color:black;
     justify-content: center;
     align-self: center;
@@ -58,5 +73,9 @@ button {
     height: 5vh;
     border: 2px solid rgb(150, 150, 150);
     box-shadow: 2px 2px 5px grey;
+    cursor: pointer;
+    justify-self: center;
 }
+
+
 

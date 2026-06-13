@@ -60,9 +60,9 @@ const Admin = () => {
     {
       post.map(post => {
         //console.log(post._id)
-        return (
-          <div key={post._id} className={styles.tileArea}>
-            <PostTile title={post.title} postId={post._id} />
+        return (<div>
+          <div key={post._id} className={styles.tileArea} style={{backgroundImage: `url("${post.image_Url || "/BaSingSe.avif"}")`}}>
+            <PostTile title={post.title} postId={post._id} /></div>
           <button onClick={() => handleClick(post._id)} >Delete</button></div>)
       })
     }
