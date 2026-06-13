@@ -10,11 +10,39 @@ const DropzoneButton = () => {
   const theme = useMantineTheme();
   const openRef = useRef(null);
 
+
+
+
+
+  //cloudinary api endpoint POST https://api.cloudinary.com/v1_1/demo/image/upload 
+
+
+
+
+
+
+
+
+const handleDrop = () => {
+  console.log("U dropped da pic")
+}
+
+
+
+
+
+
+
+
+
+
+
+
   return (
     <div className={classes.wrapper}>
       <Dropzone
         openRef={openRef}
-        onDrop={() => {}}
+        onDrop={handleDrop}
         className={classes.dropzone}
         radius="md"
         accept={[MIME_TYPES.png, MIME_TYPES.jpeg, MIME_TYPES.heic, MIME_TYPES.webp]}
