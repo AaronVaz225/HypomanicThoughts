@@ -13,24 +13,12 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    
 
 }
 
-/*
-
-.link:hover {
-    /*transform: scale(1.01);
-    animation: pulse 2s infinite ease-in-out;
-}
-
-@keyframes pulse {
-    0% { transform: scale(1.02); }
-    50% { transform: scale(1); }
-    100% { transform: scale(1.02); }
-}
 
 
-*/
 
 .title {
    margin-left: 1vw;
@@ -38,7 +26,13 @@
    font-family: "Overpass Mono", monospace;
    font-size: x-large;
    font-weight: 500;
+   background: rgba(0, 0, 0, 0.169); 
+   backdrop-filter: blur(4px); 
+   border-radius: 2%;
+   margin-right: 1vw;
 }
+
+
 
 .link {
     text-decoration: none;
