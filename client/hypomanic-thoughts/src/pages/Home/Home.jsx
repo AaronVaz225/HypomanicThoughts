@@ -41,7 +41,7 @@ const Home = () => {
           {
             post.map(post => {
               //console.log(post._id)
-              return <div key={post._id} className={styles.tileArea}><PostTile title={post.title} postId={post._id} /></div>
+              return <div key={post._id} className={styles.tileArea} style={{backgroundImage: `url("${post.image_Url || "/BaSingSe.avif"}")`}}><PostTile title={post.title} postId={post._id} /></div>
             })
           }
 
