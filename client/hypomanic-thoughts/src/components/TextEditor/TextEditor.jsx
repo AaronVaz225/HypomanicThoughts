@@ -12,7 +12,7 @@ export default function TextEditor({ editor }) {
 
 
   return (
-    <RichTextEditor editor={editor} className="tiptapEditorContainer">
+    <RichTextEditor editor={editor} className="tiptapEditorContainer" >
       {/* This builds the toolbar automatically */}
       <RichTextEditor.Toolbar>
         <RichTextEditor.ControlsGroup>
