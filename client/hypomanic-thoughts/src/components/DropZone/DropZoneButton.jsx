@@ -3,19 +3,14 @@ import { IconCloudUpload, IconDownload, IconX } from '@tabler/icons-react';
 import { Button, Group, Text, useMantineTheme } from '@mantine/core';
 import { Dropzone, MIME_TYPES } from '@mantine/dropzone';
 import classes from './DropzoneButton.module.css';
+import api from '../../api/axios';
 
 
 
-const DropzoneButton = () => {
+const DropzoneButton = ( {setImageUrl} ) => {
   const theme = useMantineTheme();
   const openRef = useRef(null);
-
-
-
-
-
-  //cloudinary api endpoint POST https://api.cloudinary.com/v1_1/demo/image/upload 
-
+ 
 
 
 
@@ -23,17 +18,42 @@ const DropzoneButton = () => {
 
 
 
-const handleDrop = () => {
-  console.log("U dropped da pic")
+
+
+
+
+
+
+
+
+
+const handleDrop = async (files) => {
+
+  try {
+
+    const file = files[0]; //Dropzone gives you an array of files, so grab the last one added
+  
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset","hypomanicthoughts");
+
+    //the cloudinary endpoint
+    const response = await api.post(
+      "https://api.cloudinary.com/v1_1/dtuho9uiz/image/upload", 
+      formData
+    );
+
+    setImageUrl(response.data.secure_url);
+    console.log("Image Url Set!")
+
+  } catch (err) {
+    console.error(`Error Uploading Image: ${err}`)
+  }
+
+  
+
+  
 }
-
-
-
-
-
-
-
-
 
 
 

@@ -34,3 +34,18 @@
     display: flex;
     justify-content: center;
 }
+
+.imagePreviewContainer {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    
+}
+
+.imagePreview {
+    width: 20vw;
+    height: 20vh;
+    filter: drop-shadow(10px 10px 20px #0c0c0c);
+}

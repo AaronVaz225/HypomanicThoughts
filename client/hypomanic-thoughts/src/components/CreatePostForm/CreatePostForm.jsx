@@ -4,6 +4,7 @@ import Footer from "../Footer/Footer"
 import { useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import DropzoneButton from "../DropZone/DropZoneButton"
+import { useState } from "react";
 
 //Mantine Code-----------------------------------------------
 // Mantine Styles (has to be in this order)
@@ -21,6 +22,8 @@ const CreatePostForm = () => {
         content: '<p>Start typing your thoughts here...</p>',
       });
 
+      const [ imageUrl, setImageUrl ] = useState("");
+
 
     const handleSubmit = async (formData) => {
         
@@ -33,7 +36,8 @@ const CreatePostForm = () => {
         try {
             const postPayload = {
                 title : postTitle,
-                body : postBody
+                body : postBody,
+                image_Url: imageUrl,
             }
 
             if (!postTitle) {
@@ -59,7 +63,11 @@ const CreatePostForm = () => {
 
     <>
     <div className={styles.dropzoneContainer}>
-     <DropzoneButton />
+     <DropzoneButton setImageUrl={setImageUrl}/>
+    </div>
+
+    <div className={styles.imagePreviewContainer}>
+    {imageUrl && <img className={styles.imagePreview} src={imageUrl} />}
     </div>
 
     <div>
