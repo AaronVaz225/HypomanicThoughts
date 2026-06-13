@@ -4,7 +4,7 @@ import Footer from "../Footer/Footer"
 import { useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import DropzoneButton from "../DropZone/DropZoneButton"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 //Mantine Code-----------------------------------------------
 // Mantine Styles (has to be in this order)
@@ -16,14 +16,14 @@ import TextEditor from "../TextEditor/TextEditor";
 
 
 
-const CreatePostForm = () => {
+const CreatePostForm = ({ post = null }) => { 
     const editor = useEditor({
         extensions: [StarterKit],
-        content: '<p>Start typing your thoughts here...</p>',
+        content: '<p>Start typing your thoughts here...</p>', 
       });
 
-      const [ imageUrl, setImageUrl ] = useState("");
-
+    const [ imageUrl, setImageUrl ] = useState( post.image_Url || ""); 
+     
 
     const handleSubmit = async (formData) => {
         
@@ -31,9 +31,18 @@ const CreatePostForm = () => {
         const postTitle = formData.get("title")
         const postBody = JSON.stringify(editor.getJSON());
 
-        console.log(postBody)
+       
 
         try {
+
+            if (post) {
+                try {
+                    console.log("#TODO: Make API request :)")
+                } catch (err) {
+                    console.error(`Error editing post: ${err}`)
+                }
+            }
+
             const postPayload = {
                 title : postTitle,
                 body : postBody,
@@ -58,6 +67,14 @@ const CreatePostForm = () => {
         }
     };
 
+    
+    useEffect(() => {
+        if (post && editor) {
+            editor.commands.setContent(JSON.parse(post.body))
+            
+        }
+    },[editor])
+
 
   return (
 
@@ -74,10 +91,10 @@ const CreatePostForm = () => {
 
         <form action={handleSubmit}>
             <div className={styles.titleContainer}>
-                <label htmlFor="title" className={styles.title}>Title</label>
+                <label htmlFor="title" className={styles.title}>Title</label> {/*TODO: { postTitle ? `${postTitle}` : "Title"} */}
             </div>
             <div className={styles.titleTextAreaContainer}>
-                <input id="title" type="text" name="title" className={styles.titleTextArea}/>
+                <input id="title" type="text" name="title" className={styles.titleTextArea} defaultValue={post.title || ""}/>
             </div>
 
 
@@ -92,7 +109,7 @@ const CreatePostForm = () => {
     
     </div>
 
-    <Footer />
+    
 
     </>
   )

@@ -6,6 +6,8 @@ import PostDetails from "./pages/PostDetails/PostDetails.jsx";
 import Contact from "./pages/Contact/Contact.jsx";
 import About from './pages/About/About.jsx';
 import { MantineProvider } from "@mantine/core";
+import PostEdit from "./pages/PostEdit/PostEdit.jsx";
+
 
 
 
@@ -19,6 +21,7 @@ const App = () => {
         <Route path="/post/:postId" element={<PostDetails />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/admin/create-post" element={<CreatePost />} />
+        <Route path="/admin/post/:postId" element={<PostEdit />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
       </Routes>

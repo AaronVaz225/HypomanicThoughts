@@ -23,7 +23,7 @@ import StarterKit from '@tiptap/starter-kit';
 const PostDetails = () => {
 
   //gets the post id from the URL
-  let { postId } = useParams()
+  const { postId } = useParams();
   const [ post, setPost ] = useState({});
   
 
@@ -40,7 +40,7 @@ const PostDetails = () => {
     getPostBodyFromApi();
     
 
-  },[postId]);
+  },[postId]); //Im leaving postId in the dependency array, even though it would work without, because eventually if i add next post / prev post button 
 
  
 

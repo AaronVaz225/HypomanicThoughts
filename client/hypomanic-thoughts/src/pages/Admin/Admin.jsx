@@ -1,6 +1,6 @@
 import Header from "../../components/Header/Header"
 import Footer from "../../components/Footer/Footer"
-import PostTile from "../../components/PostTile/PostTile"
+import AdminPostTile from "../../components/AdminPostTile/AdminPostTile"
 import { useEffect, useState } from "react";
 import styles from "../Admin/admin.module.css"
 import api from "../../api/axios";
@@ -60,9 +60,9 @@ const Admin = () => {
     {
       post.map(post => {
         //console.log(post._id)
-        return (<div>
-          <div key={post._id} className={styles.tileArea} style={{backgroundImage: `url("${post.image_Url || "/BaSingSe.avif"}")`}}>
-            <PostTile title={post.title} postId={post._id} /></div>
+        return (<div key={post._id}>
+          <div className={styles.tileArea} style={{backgroundImage: `url("${post.image_Url || "/BaSingSe.avif"}")`}}>
+            <AdminPostTile title={post.title} postId={post._id} /></div>
           <button onClick={() => handleClick(post._id)} >Delete</button></div>)
       })
     }
