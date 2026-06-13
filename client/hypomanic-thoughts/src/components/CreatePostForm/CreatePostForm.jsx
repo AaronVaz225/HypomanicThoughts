@@ -37,10 +37,28 @@ const CreatePostForm = ({ post = null }) => {
 
             if (post) {
                 try {
-                    console.log("#TODO: Make API request :)")
+                    const postPayload = {
+                        title : postTitle,
+                        body : postBody,
+                        image_Url: imageUrl,
+                    }
+        
+                    if (!postTitle) {
+                        alert("Please Enter A Title");
+                        return;
+                    }
+        
+                    if (!postBody) {
+                        alert("Please Write a post before submitting!");
+                        return;
+                    }
+        
+                    await api.put(`/api/posts/${post._id}`, postPayload);
+                    alert("Update Successful!")
                 } catch (err) {
                     console.error(`Error editing post: ${err}`)
                 }
+                return;
             }
 
             const postPayload = {
