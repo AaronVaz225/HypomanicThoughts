@@ -1,0 +1,77 @@
+import Header from "../../components/Header/Header"
+import Footer from "../../components/Footer/Footer"
+import AdminPostTile from "../../components/AdminPostTile/AdminPostTile"
+import { useEffect, useState } from "react";
+import styles from "../Admin/admin.module.css"
+import api from "../../api/axios";
+import { NavLink } from "react-router-dom";
+
+const Admin = () => {
+
+
+  const [ post, setPost ] = useState([]);
+
+  useEffect(() => {
+
+    const getPostsFromApi = async () => {
+
+      const allPosts = await api.get("/api/posts");
+      setPost(allPosts.data);
+      
+    };
+
+
+    getPostsFromApi();
+    
+  },[]);
+
+
+
+
+  const handleClick = async (postId) => {
+    
+    try {
+      await api.delete(`/api/posts/${postId}`)
+      setPost(post.filter(post => post._id != postId))
+      alert("Post Deleted")
+    } catch (err) {
+      console.error(`Error deleting post: ${err}`)
+    }
+
+    
+  }
+
+
+
+
+  return (
+    <>
+    <Header />
+
+    <div className={styles.createPostBtnContainer}>
+    <NavLink to="/admin/create-post" className={styles.navlink}>
+      <div className={styles.createPostBtn}>Create Post</div>
+    </NavLink>
+    </div>
+
+    {/* Outer Container Grid for posts */}
+    <div className={styles.postTileContainer}>
+    {/* Renders each post's title card */}
+    {
+      post.map(post => {
+        //console.log(post._id)
+        return (<div key={post._id}>
+          <div className={styles.tileArea} style={{backgroundImage: `url("${post.image_Url || "/BaSingSe.avif"}")`}}>
+            <AdminPostTile title={post.title} postId={post._id} /></div>
+          <button onClick={() => handleClick(post._id)} >Delete</button></div>)
+      })
+    }
+
+
+    </div>
+    <Footer />
+    </>
+  )
+}
+
+export default Admin

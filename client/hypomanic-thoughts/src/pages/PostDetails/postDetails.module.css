@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300..700&display=swap');
+
+
+
+
+.blogTitle {
+    /* background-color: burlywood; */
+    display: flex;
+    justify-content: center;
+    font-family: "Overpass Mono", monospace;
+    font-size: xx-large;
+    border-bottom-style: solid;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+/*global is needed since .tiptap is a classname that is not being used as a css module*/
+.container :global(.tiptap) {
+    background-color: rgb(255, 255, 255);
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5vh;
+}
+
+img {
+    width: 75vw;
+    height: 50vh;
+    object-fit: contain;
+}
+
+
+
+
+/* .blogBody {
+    background-color: aqua; 
+    display: flex;
+    justify-content: center;
+    font-family: "Overpass Mono", monospace;
+    font-size: large;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-top: 10vw;
+    min-height: 60vh;
+    margin-bottom: 10vh;
+} */
+

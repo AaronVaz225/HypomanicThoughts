@@ -8,6 +8,7 @@ const postSchema = new Schema({
     title : String,
     body : String,
     createdOn : {type : Date, default : Date.now},
+    image_Url: String,
 });
 
 

@@ -13,6 +13,20 @@ export const createPost = async (req, res) => {
     }
 };
 
+//Function to update post
+export const updatePost = async (req, res) => {
+    try {
+        const updatePost = await Post.findByIdAndUpdate(
+            req.params.id,
+            req.body,
+            {new: true} //return updated post
+        );
+        res.status(200).json(updatePost)
+    } catch (err) {
+        res.status(500).json({message: "An error occured updating post"})
+    }
+}
+
 
 //Function to get all posts
 export const getAllPosts = async (req, res) => {
@@ -23,6 +37,22 @@ export const getAllPosts = async (req, res) => {
         res.status(500).json({message: "An error occured getting posts."});
     }
 };
+
+//Function to get specific post
+export const findPost = async (req, res) => {
+    try {
+        const post = await Post.findById(req.params.id);
+
+        //If no post with that id exists
+        if (!post) {
+            res.status(404).json({message: "No post with that id fount"});
+        }
+        res.status(200).json(post);
+
+    } catch (err) {
+        res.status(500).json({message: "An error occured finding post."});
+    }
+}
 
 //Function to delete post
 export const deletePost = async (req, res) => {

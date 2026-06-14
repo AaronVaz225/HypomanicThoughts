@@ -1,0 +1,51 @@
+.textEditor {
+    margin-left: 10vw;
+    margin-right:10vw;
+    margin-top: 5vh;
+}
+
+.titleContainer {
+    display: flex;
+    /* background-color: aqua; */
+    justify-content: center;
+    margin-top: 5vh;
+}
+
+.titleTextAreaContainer {
+    display: flex;
+    /* background-color: aqua; */
+    justify-content: center;
+}
+
+.titleTextArea {
+    width: 30vw;
+}
+
+
+
+.submitButton {
+    width: 5vw;
+    margin-left: 47.5vw;
+    margin-bottom: 50px;
+
+}
+
+.dropzoneContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.imagePreviewContainer {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    
+}
+
+.imagePreview {
+    width: 20vw;
+    height: 20vh;
+    filter: drop-shadow(10px 10px 20px #0c0c0c);
+}
