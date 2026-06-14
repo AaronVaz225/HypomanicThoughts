@@ -21,6 +21,20 @@
     margin-right: 10vw;
 }
 
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5vh;
+}
+
+img {
+    width: 75vw;
+    height: 50vh;
+    object-fit: contain;
+}
+
+
+
 
 /* .blogBody {
     background-color: aqua; 

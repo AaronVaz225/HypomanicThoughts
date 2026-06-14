@@ -70,6 +70,7 @@ const PostDetails = () => {
   return (
     <>
     <Header />
+    <div className={styles.imageContainer}>{<img src={post.image_Url} />}</div>
     <div className={styles.container}>
       <div className={styles.blogTitle}>{post.title}</div>
       <EditorContent editor={editor} />
