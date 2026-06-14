@@ -1,6 +1,5 @@
 import styles from "../CreatePostForm/createPostForm.module.css"
 import api from "../../api/axios"
-import Footer from "../Footer/Footer"
 import { useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import DropzoneButton from "../DropZone/DropZoneButton"
@@ -16,7 +15,7 @@ import TextEditor from "../TextEditor/TextEditor";
 
 
 
-const CreatePostForm = ({ post = null }) => { 
+const CreatePostForm = ({ post = "" }) => { 
     const editor = useEditor({
         extensions: [StarterKit],
         content: '<p>Start typing your thoughts here...</p>', 
