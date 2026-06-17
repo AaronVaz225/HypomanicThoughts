@@ -36,6 +36,7 @@ const CreatePostForm = ({ post = "" }) => {
             return;
         }
 
+        //#TODO since im now using JSON.stringify(editor.getJSON), it could be an empty {}, so this would never trigger
         if (!postBody) {
             alert("Please Write a post before submitting!");
             return;
@@ -45,7 +46,7 @@ const CreatePostForm = ({ post = "" }) => {
             try {
                 
                 await api.put(`/api/posts/${post._id}`, postPayload);
-                alert("Update Successful!") //TODO: Implement Update Success Card
+                alert("Update Successful!") //#TODO: Implement Update Success Card
             } catch (err) {
                 console.error(`Error editing post: ${err}`)
             }
@@ -71,7 +72,7 @@ const CreatePostForm = ({ post = "" }) => {
             editor.commands.setContent(JSON.parse(post.body))
             
         }
-    },[editor])
+    },[editor, post])
 
 
   return (
