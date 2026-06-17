@@ -20,14 +20,15 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/post/:postId" element={<PostDetails />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/login" element={<LoginPage />} />
+
+        {/* Protected Routes */}
         <Route path="/admin" element={<Admin />} />
         <Route path="/admin/create-post" element={<CreatePost />} />
         <Route path="/admin/post/:postId" element={<PostEdit />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/about" element={<About />} />
 
-        {/*In Dev */}
-        <Route path="/login" element={<LoginPage />} />
       </Routes>
       </MantineProvider>
     
