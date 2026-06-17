@@ -1,4 +1,4 @@
-//File Explanation: Mongoose Model for blogposts
+// Mongoose Model for blogposts
 import mongoose from "mongoose";
 
 
@@ -9,6 +9,7 @@ const postSchema = new Schema({
     body : String,
     createdOn : {type : Date, default : Date.now},
     image_Url: String,
+    
 });
 
 
