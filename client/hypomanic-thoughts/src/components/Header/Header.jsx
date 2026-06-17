@@ -1,12 +1,14 @@
 //Contains Title and NavBar
 import { NavLink } from "react-router-dom"
 import styles from "./header.module.css"
+import LogoutButton from "../LogoutButton/LogoutButton"
 
 
 
 const Header = () => {
   return (
     <header className={styles.headerContainer}>
+
         {/*------------Nav Bar-------------*/}
         <nav className={styles.navBar}>
         <NavLink to="/" style={( {isActive} ) => isActive ? {textDecoration : "underline"} : {textDecoration : "none" }} end>
@@ -21,6 +23,8 @@ const Header = () => {
             Contact
           </NavLink>
         </nav>
+
+        <LogoutButton />
 
 
         {/*------------Title-------------*/}

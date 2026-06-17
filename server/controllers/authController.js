@@ -48,3 +48,7 @@ export const logoutAdmin = (req, res) => {
     res.json({message: "Logged Out"})
 };
 
+//Return logged in user for verificaiton
+export const getMe = (req, res) => {
+    res.json(req.user);
+}
