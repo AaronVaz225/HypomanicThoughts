@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../../api/axios";
+import styles from "../LogIn/loginForm.module.css"
  
 
 
@@ -10,17 +11,17 @@ const LoginForm = () => {
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
-    const loginAction = async (formData) => {
-      const userEmail = formData.get("email");
-      const userPassword = formData.get("password");
+    const loginAction = async (e) => {
+      e.preventDefault();
+   
 
-      if (!userEmail || !userPassword) {
+      if (!email || !password) {
         alert("Please Enter Email and Password");//#TODO: make toast message
       }
 
       const payload = {
-        email: userEmail,
-        password: userPassword,
+        email: email,
+        password: password,
       }
 
       try {
@@ -39,8 +40,9 @@ const LoginForm = () => {
 
 
   return (
-    <div>
-        <form action={loginAction}>
+    <div className={styles.loginContainer}>
+        <form onSubmit={loginAction}>
+          <div className={styles.emailContainer}>
             <label htmlFor="email">Email: </label>
             <input 
                 type="text" 
@@ -49,7 +51,10 @@ const LoginForm = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                  />
+            </div>
 
+
+          <div className={styles.passwordContainer}>
             <label htmlFor="password">Password: </label>
             <input 
                 type="password" 
@@ -58,7 +63,8 @@ const LoginForm = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                  />
-            <button type="submit">Log In</button>
+            </div>
+            <button type="submit" className={styles.logInBtn}>Log In</button>
         </form>
     </div>
   )

@@ -1,0 +1,23 @@
+.loginContainer {
+    background-color: blanchedalmond;
+    display: flex;
+    justify-content: center;
+
+    width: 30vw;
+    height: 45vh;
+}
+
+.emailContainer {
+    margin-top: 100px;
+  
+}
+
+.passwordContainer {
+    display: flex;
+    background-color: aquamarine;
+    width: 100%;
+}
+
+.logInBtn {
+    width: 6000px;
+}
