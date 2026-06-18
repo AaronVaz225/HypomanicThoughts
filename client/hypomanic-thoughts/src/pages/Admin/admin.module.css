@@ -19,8 +19,9 @@
     align-content: center;
     background-size: cover;      
     background-position: center;
-    box-shadow: 10px 5px 5px rgb(85, 84, 84);
-    border-radius: 2%;
+    box-shadow: 1px 1px 5px rgb(85, 84, 84);
+    border-radius: 1%;
+    
     
 }
 

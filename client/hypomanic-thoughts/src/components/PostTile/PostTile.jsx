@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom"
 import styles from "../PostTile/postTile.module.css"
 
 
-const PostTile = ({ title, postId }) => {
+const PostTile = ({ title, postId, date }) => {
 
 
 
@@ -16,7 +16,7 @@ const PostTile = ({ title, postId }) => {
 
     <NavLink to={`/post/${postId}`} className={styles.link}>
     <div className={styles.post}>
-        <div className={styles.title}>{title}</div>
+        <div className={styles.title}><div className={styles.textBox}>{title}</div><div className={styles.date}>{date}</div></div>
     </div>
     </NavLink>
      
