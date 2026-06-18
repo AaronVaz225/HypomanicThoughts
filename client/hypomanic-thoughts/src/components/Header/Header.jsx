@@ -1,14 +1,33 @@
 //Contains Title and NavBar
-import { NavLink } from "react-router-dom"
+import { NavLink, useLocation } from "react-router-dom"
 import styles from "./header.module.css"
+import LogoutButton from "../LogoutButton/LogoutButton"
+import { useState } from "react";
+
 
 
 
 const Header = () => {
+  const location = useLocation();
+  const isAdmin = location.pathname.startsWith("/admin");
+
+  const [showAdmin, setShowAdmin] = useState(false);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === "|") {
+        setShowAdmin(true)
+      }
+  
+    })
+
   return (
     <header className={styles.headerContainer}>
+
         {/*------------Nav Bar-------------*/}
         <nav className={styles.navBar}>
+        {showAdmin && <NavLink to="/admin/" style={( {isActive} ) => isActive ? {textDecoration : "underline"} : {textDecoration : "none" }}>
+        Admin
+        </NavLink>}
+
         <NavLink to="/" style={( {isActive} ) => isActive ? {textDecoration : "underline"} : {textDecoration : "none" }} end>
             Home
           </NavLink>
@@ -21,6 +40,8 @@ const Header = () => {
             Contact
           </NavLink>
         </nav>
+
+        {isAdmin && <LogoutButton />}
 
 
         {/*------------Title-------------*/}

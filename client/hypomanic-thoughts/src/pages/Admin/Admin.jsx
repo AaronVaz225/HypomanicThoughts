@@ -63,7 +63,7 @@ const Admin = () => {
         return (<div key={post._id}>
           <div className={styles.tileArea} style={{backgroundImage: `url("${post.image_Url || "/BaSingSe.avif"}")`}}>
             <AdminPostTile title={post.title} postId={post._id} /></div>
-          <button onClick={() => handleClick(post._id)} >Delete</button></div>)
+          <button className={styles.delete} onClick={() => handleClick(post._id)} >Delete</button></div>)
       })
     }
 

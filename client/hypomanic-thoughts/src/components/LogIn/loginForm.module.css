@@ -1,0 +1,42 @@
+.loginContainer {
+    background-color: rgb(236, 236, 236);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 2%;
+    box-shadow: 5px 5px 10px;
+
+    width: 30vw;
+    height: 45vh;
+}
+
+.emailContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(236, 236, 236);
+    
+  
+}
+
+#email {
+  
+}
+
+.passwordContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(236, 236, 236);
+    width: 100%;
+    margin-top: 33%;
+    margin-bottom: 33%;
+}
+
+#password {
+
+}
+
+.logInBtn {
+   
+    
+}

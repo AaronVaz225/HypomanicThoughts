@@ -7,6 +7,8 @@ import Contact from "./pages/Contact/Contact.jsx";
 import About from './pages/About/About.jsx';
 import { MantineProvider } from "@mantine/core";
 import PostEdit from "./pages/PostEdit/PostEdit.jsx";
+import LoginPage from "./pages/Login/LoginPage.jsx";
+import ProtectedRoutes from "./pages/Auth/ProtectedRoutes.jsx";
 
 
 
@@ -19,11 +21,17 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/post/:postId" element={<PostDetails />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/admin/create-post" element={<CreatePost />} />
-        <Route path="/admin/post/:postId" element={<PostEdit />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
+        <Route path="/login" element={<LoginPage />} />
+
+        {/* Protected Routes */}
+        <Route element={<ProtectedRoutes />}>
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/admin/create-post" element={<CreatePost />} />
+          <Route path="/admin/post/:postId" element={<PostEdit />} />
+        </Route>
+
       </Routes>
       </MantineProvider>
     
