@@ -9,7 +9,6 @@
     justify-content: center;
     font-family: "Overpass Mono", monospace;
     font-size: xx-large;
-    border-bottom-style: solid;
     margin-left: 10vw;
     margin-right: 10vw;
 }
@@ -31,6 +30,14 @@ img {
     width: 75vw;
     height: 50vh;
     object-fit: contain;
+}
+
+
+.footerLine {
+    height: 5vh;
+    width: 100vw;
+    object-fit: fill;
+    margin-top: 2vh;
 }
 
 

@@ -24,16 +24,13 @@
 .title {
     display: flex;
     justify-content: center;
-    font-size: x-large;
-    font-size: 7vh;
+    font-weight: 300;
+    font-size: 10vh;
     font-family: "Noto Serif", 'Times New Roman';
+    cursor: default;
     /* background-color: greenyellow; */
 }
 
-.manic {
-    font-family: Splash, cursive;
-    margin-right: 3vw;
-}
 
 .navBar a {
     color: black;
@@ -43,4 +40,17 @@
 
 .navBar a.active {
     border-bottom: 3px solid black;
+}
+
+.image {
+    width: 15rem;
+    height: 10rem;
+}
+
+.subtitle {
+    margin-top: -2vh;
+    margin-bottom: -2vh;
+    width: 30vw;
+    height: 10vh;
+    justify-self: center;
 }

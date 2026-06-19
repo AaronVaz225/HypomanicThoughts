@@ -14,19 +14,6 @@ const DropzoneButton = ( {setImageUrl} ) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 const handleDrop = async (files) => {
 
   try {
@@ -40,7 +27,10 @@ const handleDrop = async (files) => {
     //the cloudinary endpoint
     const response = await api.post(
       "https://api.cloudinary.com/v1_1/dtuho9uiz/image/upload", 
-      formData
+      formData, 
+      {
+        withCredentials: false //Can't send cookies to cloudinary or else you get an error
+      }
     );
 
     setImageUrl(response.data.secure_url);

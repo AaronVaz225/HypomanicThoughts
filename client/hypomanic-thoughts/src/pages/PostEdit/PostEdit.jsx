@@ -4,6 +4,7 @@ import Header from "../../components/Header/Header"
 import { useParams } from "react-router"
 import api from "../../api/axios"
 import CreatePostForm from "../../components/CreatePostForm/CreatePostForm"
+import BackButton from "../../components/BackButton/BackButton"
 
 const PostEdit = () => {
     const [ post, setPost ] = useState(null);
@@ -36,6 +37,7 @@ const PostEdit = () => {
   return (
     <div>
     <Header />
+    <BackButton />
     {post && <CreatePostForm post={post} />}
     <Footer />
     </div>
