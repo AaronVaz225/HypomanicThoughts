@@ -9,7 +9,7 @@ import { useState } from "react";
 
 const Header = () => {
   const location = useLocation();
-  const isAdmin = location.pathname.startsWith("/admin");
+  const isAdmin = location.pathname == "/admin/" ? true : false;
 
   const [showAdmin, setShowAdmin] = useState(false);
     document.addEventListener('keydown', (e) => {
@@ -47,9 +47,15 @@ const Header = () => {
         {/*------------Title-------------*/}
         <div className={styles.title}>
           Hypo 
-          <div className={styles.manic}>MANIC </div> 
+          <img 
+          src="/maniclogo.png"
+          alt="Manic"
+          className={styles.image}
+          />
           Thoughts
         </div>
+
+        <img src="/subtitle.png" alt="subtitle" className={styles.subtitle} />
     </header>
     
   )

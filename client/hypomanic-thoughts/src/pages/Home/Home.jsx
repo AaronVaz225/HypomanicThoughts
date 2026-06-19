@@ -40,8 +40,12 @@ const Home = () => {
           {/* Renders each post's title card */}
           {
             post.map(post => {
-              //console.log(post._id)
-              return <div key={post._id} className={styles.tileArea} style={{backgroundImage: `url("${post.image_Url || "/BaSingSe.avif"}")`}}><PostTile title={post.title} postId={post._id} /></div>
+              const date = new Date(post.createdOn).toLocaleDateString("en-US", {
+                day: "numeric",
+                month: "short",
+                year: "numeric"
+              })
+              return <div key={post._id} className={styles.tileArea} style={{backgroundImage: `url("${post.image_Url || "/BaSingSe.avif"}")`}}><PostTile title={post.title} postId={post._id} date={date}/></div>
             })
           }
 

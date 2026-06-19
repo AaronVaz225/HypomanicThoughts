@@ -1,11 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rock+Salt&display=swap');
+
+
+
+
+.footerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+
+
+
+.footerLine {
+    height: 5vh;
+    width: 100vw;
+    object-fit: fill;
+    margin-top: 2vh;
+}
+
+
+
 .footer {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 5vh;
+    margin-bottom: 2vh;
+    font-family: "Rock Salt", cursive;
+
+/*     
     border-top-style: solid;
     margin-left: 10vw;
-    margin-right: 10vw;
+    margin-right: 10vw; */
 }
-
-

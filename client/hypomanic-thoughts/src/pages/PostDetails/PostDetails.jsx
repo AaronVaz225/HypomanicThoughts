@@ -9,7 +9,7 @@ import { useParams } from "react-router"
 import api from "../../api/axios"
 import styles from "../PostDetails/postDetails.module.css"
 import Footer from "../../components/Footer/Footer"
-
+import BackButton from "../../components/BackButton/BackButton"
 
 //Test Editor Imports
 import { EditorContent, useEditor } from '@tiptap/react';
@@ -70,9 +70,11 @@ const PostDetails = () => {
   return (
     <>
     <Header />
+    <BackButton />
     <div className={styles.imageContainer}>{<img src={post.image_Url} />}</div>
     <div className={styles.container}>
       <div className={styles.blogTitle}>{post.title}</div>
+      <img src="/line.png" className={styles.footerLine} />
       <EditorContent editor={editor} />
     </div>
     <Footer />
