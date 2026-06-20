@@ -4,12 +4,12 @@
   practice using useParams and axios I kept it this way.
 */
 import { useState, useEffect } from "react"
-import Header from "../../components/Header/Header"
+import Header from "../../components/Header/Header.jsx"
 import { useParams } from "react-router"
-import api from "../../api/axios"
+import api from "../../api/axios.js"
 import styles from "../PostDetails/postDetails.module.css"
-import Footer from "../../components/Footer/Footer"
-import BackButton from "../../components/BackButton/BackButton"
+import Footer from "../../components/Footer/Footer.jsx"
+import BackButton from "../../components/BackButton/BackButton.jsx"
 
 //Test Editor Imports
 import { EditorContent, useEditor } from '@tiptap/react';

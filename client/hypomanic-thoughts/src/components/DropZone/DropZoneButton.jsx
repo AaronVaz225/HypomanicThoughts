@@ -3,7 +3,7 @@ import { IconCloudUpload, IconDownload, IconX } from '@tabler/icons-react';
 import { Button, Group, Text, useMantineTheme } from '@mantine/core';
 import { Dropzone, MIME_TYPES } from '@mantine/dropzone';
 import classes from './DropzoneButton.module.css';
-import api from '../../api/axios';
+import api from '../../api/axios.js';
 
 
 

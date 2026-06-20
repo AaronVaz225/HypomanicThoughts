@@ -1,10 +1,10 @@
 import styles from "../CreatePostForm/createPostForm.module.css"
-import api from "../../api/axios"
+import api from "../../api/axios.js"
 import { useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
-import DropzoneButton from "../DropZone/DropZoneButton"
+import DropzoneButton from "../DropZone/DropZoneButton.jsx"
 import { useEffect, useState } from "react";
-import TextEditor from "../TextEditor/TextEditor";
+import TextEditor from "../TextEditor/TextEditor.jsx";
 //-----------------------------------------------------------------------------------------
 
 
