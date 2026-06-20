@@ -1,5 +1,5 @@
-import LoginForm from "../../components/LogIn/loginForm.jsx"
-import styles from "../../pages/Login/LoginPage.module.css"
+import LoginForm from "../../components/LogIn/LoginForm.jsx"
+import styles from "../../pages/Login/loginPage.module.css"
 
 const LoginPage = () => {
   return (
