@@ -1,9 +1,9 @@
-import Header from "../../components/Header/Header"
-import Footer from "../../components/Footer/Footer"
-import AdminPostTile from "../../components/AdminPostTile/AdminPostTile"
+import Header from "../../components/Header/Header.jsx"
+import Footer from "../../components/Footer/Footer.jsx"
+import AdminPostTile from "../../components/AdminPostTile/AdminPostTile.jsx"
 import { useEffect, useState } from "react";
 import styles from "../Admin/admin.module.css"
-import api from "../../api/axios";
+import api from "../../api/axios.js";
 import { NavLink } from "react-router-dom";
 
 const Admin = () => {

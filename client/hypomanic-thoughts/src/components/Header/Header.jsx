@@ -1,7 +1,7 @@
 //Contains Title and NavBar
 import { NavLink, useLocation } from "react-router-dom"
 import styles from "./header.module.css"
-import LogoutButton from "../LogoutButton/LogoutButton"
+import LogoutButton from "../LogoutButton/LogoutButton.jsx"
 import { useState } from "react";
 
 

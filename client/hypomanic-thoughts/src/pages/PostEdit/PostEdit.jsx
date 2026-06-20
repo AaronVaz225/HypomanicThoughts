@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
-import Footer from "../../components/Footer/Footer"
-import Header from "../../components/Header/Header"
+import Footer from "../../components/Footer/Footer.jsx"
+import Header from "../../components/Header/Header.jsx"
 import { useParams } from "react-router"
-import api from "../../api/axios"
-import CreatePostForm from "../../components/CreatePostForm/CreatePostForm"
-import BackButton from "../../components/BackButton/BackButton"
+import api from "../../api/axios.js"
+import CreatePostForm from "../../components/CreatePostForm/CreatePostForm.jsx"
+import BackButton from "../../components/BackButton/BackButton.jsx"
 
 const PostEdit = () => {
     const [ post, setPost ] = useState(null);

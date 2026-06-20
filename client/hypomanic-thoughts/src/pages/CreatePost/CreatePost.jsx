@@ -1,6 +1,6 @@
-import CreatePostForm from "../../components/CreatePostForm/CreatePostForm"
-import Footer from "../../components/Footer/Footer"
-import Header from "../../components/Header/Header"
+import CreatePostForm from "../../components/CreatePostForm/CreatePostForm.jsx"
+import Footer from "../../components/Footer/Footer.jsx"
+import Header from "../../components/Header/Header.jsx"
 
 const CreatePost = () => {
   return (

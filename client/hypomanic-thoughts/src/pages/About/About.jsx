@@ -1,4 +1,4 @@
-import Header from "../../components/Header/Header"
+import Header from "../../components/Header/Header.jsx"
 import styles from "../About/about.module.css"
 
 const About = () => {
