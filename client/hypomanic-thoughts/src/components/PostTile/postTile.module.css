@@ -69,3 +69,21 @@
     height: 100%;
     
 }
+
+@media (max-width: 1000px) {
+    .title {
+        font-size: larger;
+        
+    }
+
+    .textBox {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+    .date {
+        margin-left: 2rem;
+        margin-right: 2rem;
+        font-size: x-small;
+    }
+}

@@ -25,10 +25,17 @@
     display: flex;
     justify-content: center;
     font-weight: 300;
-    font-size: 10vh;
+    font-size: clamp(2.5rem, 8vw, 6rem);
     font-family: "Noto Serif", 'Times New Roman';
     cursor: default;
+    align-items: center;
     /* background-color: greenyellow; */
+}
+
+.image {
+    display: flex;
+    width: clamp(5rem, 12vw, 12rem);
+    height: 100%;
 }
 
 
@@ -42,10 +49,7 @@
     border-bottom: 3px solid black;
 }
 
-.image {
-    width: 15rem;
-    height: 10rem;
-}
+
 
 .subtitle {
     margin-top: -2vh;
@@ -53,4 +57,15 @@
     width: 30vw;
     height: 10vh;
     justify-self: center;
+}
+
+@media (max-width: 1000px) {
+
+
+
+   .subtitle {
+    margin-top: -2vw;
+    width: 25vw;
+   }
+    
 }
